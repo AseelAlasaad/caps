@@ -1,0 +1,25 @@
+{
+  "name": "caps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "callevent.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "start": "node callevent.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AseelAlasaad/caps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AseelAlasaad/caps/issues"
+  },
+  "homepage": "https://github.com/AseelAlasaad/caps#readme",
+  "dependencies": {
+    "faker": "^4.0.0",
+    "jest": "^27.3.1"
+  }
+}

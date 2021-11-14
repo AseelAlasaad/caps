@@ -1,6 +1,8 @@
 # caps
 
-[pr](https://github.com/AseelAlasaad/caps/pull/1)
+[PR](https://github.com/AseelAlasaad/caps/pull/1)
+
+[Action](https://github.com/AseelAlasaad/caps/actions)
 
 # Result
 

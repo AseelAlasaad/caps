@@ -1,0 +1,18 @@
+{
+  "name": "driver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Driver.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "start": "node Driver.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.3.1",
+    "socket.io-client": "^4.3.2"
+  }
+}

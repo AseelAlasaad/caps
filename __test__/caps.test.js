@@ -10,34 +10,38 @@ let payload = {
     address: '0284 Thad Hollow'
 }
 
-beforeEach(() => {
+beforeEach((done) => {
     consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+    done();
 });
-afterEach(() => {
+afterEach((done) => {
+    caps.close();
     consoleSpy.mockRestore();
+    done();
 });
 
 describe('testing event', () => {
 
-    it('test pickup', () => {
+    it('test pickup',async () => {
 
         caps.emit('pickup', payload);
-       consoleSpy();
+        await consoleSpy();
   
         expect(consoleSpy).toHaveBeenCalled();
+        
     })
 
-    it('test in-transit',  () => {
+    it('test in-transit', async  () => {
 
         caps.emit('in-transit', payload);
-         consoleSpy();
+       await  consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
         })
 
-    it('test delivered', () => {
+    it('test delivered',async () => {
 
-        caps.emit('delivered', payload);
-       consoleSpy();
+        caps.emit('delivered',payload);
+      await consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     })
 

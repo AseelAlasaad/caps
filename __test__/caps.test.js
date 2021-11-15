@@ -1,7 +1,6 @@
 'use strict';
 
-const { expect } = require('@jest/globals');
-const event = require('../module/event');
+const caps = require('../modular/caps/caps');
 let consoleSpy;
 
 let payload = {
@@ -22,7 +21,7 @@ describe('testing event', () => {
 
     it('test pickup', () => {
 
-        event.emit('pickup', payload);
+        caps.emit('pickup', payload);
        consoleSpy();
   
         expect(consoleSpy).toHaveBeenCalled();
@@ -30,14 +29,14 @@ describe('testing event', () => {
 
     it('test in-transit',  () => {
 
-        event.emit('in-transit', payload);
+        caps.emit('in-transit', payload);
          consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
         })
 
     it('test delivered', () => {
 
-        event.emit('delivered', payload);
+        caps.emit('delivered', payload);
        consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     })

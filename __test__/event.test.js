@@ -1,6 +1,7 @@
 'use strict';
 
-const caps = require('../modular/caps/caps');
+const { expect } = require('@jest/globals');
+const event = require('../module/event');
 let consoleSpy;
 
 let payload = {
@@ -9,38 +10,36 @@ let payload = {
     customer: 'Jamal Braun',
     address: '0284 Thad Hollow'
 }
-beforeEach((done) => {
+
+beforeEach(() => {
+
     consoleSpy = jest.spyOn(console, 'log').mockImplementation();
-    done();
 });
-afterEach((done) => {
-    caps.close();
+afterEach(() => {
     consoleSpy.mockRestore();
-    done();
 });
 
 describe('testing event', () => {
 
-    it('test pickup',async () => {
+    it('test pickup', () => {
 
-        caps.emit('pickup', payload);
-        await consoleSpy();
+        event.emit('pickup', payload);
+       consoleSpy();
   
         expect(consoleSpy).toHaveBeenCalled();
-        
     })
 
-    it('test in-transit', async  () => {
+    it('test in-transit',  () => {
 
-        caps.emit('in-transit', payload);
-       await  consoleSpy();
+        event.emit('in-transit', payload);
+         consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
         })
 
-    it('test delivered',async () => {
+    it('test delivered', () => {
 
-        caps.emit('delivered',payload);
-      await consoleSpy();
+        event.emit('delivered', payload);
+       consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     })
 

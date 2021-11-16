@@ -4,8 +4,8 @@
   "description": "",
   "main": "callevent.js",
   "scripts": {
-    "test": "NODE_ENV=test jest"
-   
+    "test": "NODE_ENV=test jest",
+    "start": "node callevent.js"
   },
   "repository": {
     "type": "git",

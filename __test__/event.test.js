@@ -12,6 +12,7 @@ let payload = {
 }
 
 beforeEach(() => {
+
     consoleSpy = jest.spyOn(console, 'log').mockImplementation();
 });
 afterEach(() => {
@@ -41,8 +42,5 @@ describe('testing event', () => {
        consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     })
-
-
-
 
 });

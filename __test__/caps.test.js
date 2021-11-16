@@ -9,7 +9,6 @@ let payload = {
     customer: 'Jamal Braun',
     address: '0284 Thad Hollow'
 }
-
 beforeEach((done) => {
     consoleSpy = jest.spyOn(console, 'log').mockImplementation();
     done();
@@ -44,8 +43,5 @@ describe('testing event', () => {
       await consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     })
-
-
-
 
 });
